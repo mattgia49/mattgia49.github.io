@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Suggestions</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/sugg.css">
+
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        $(function() {
+           $("#navbar").load("../assets/navbarTab.html");
+        });
+    </script>
+    <nav id="navbar"></nav>
+
+    <div class="container">
+        <h1>User Suggestions</h1>
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="suggestion">Suggestion:</label>
+            <textarea id="suggestion" name="suggestion" required></textarea>
+            <input type="submit" value="Submit" onclick="dothing()">
+        </form>
+    </div>
+
+    <script>
+        function dothing() {
+            suggestion = $("#name").val() + ": " + $("#suggestion").val()
+
+            $(".container").html("<h1>Nah screw your suggestion</h1>")
+        }
+    </script>
+</body>
+</html>

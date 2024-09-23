@@ -1,4 +1,3 @@
-<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +9,16 @@
 </head>
 <body>
     
-    <nav id="navbar">Hi</nav>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $(function() {
+           $("#navbar").load("assets/navbar.html");
+        });
+     </script>
+    <nav id="navbar"></nav>
+    <div id="homeText"></div>
+    <script src="js/home.js"></script>
 
 </body>
 </html>

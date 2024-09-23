@@ -1,0 +1,88 @@
+.game {
+    background-color: lightblue;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+}
+
+.counterSec {
+    padding: 20px;
+    height: 33%;
+    text-align: center;
+    user-select: none;
+}
+
+.counter {
+    height: 300px;
+    width: 400px;
+    margin: 10px;
+    user-select: none;
+}
+
+.moneyCounter {
+    background-color: rgb(93, 175, 93);
+    border: solid 7px green;
+    border-radius: 10px;
+    user-select: none;
+}
+
+.cheeseCounter {
+    background-color: gold;
+    border: solid 7px goldenrod;
+    border-radius: 10px;
+    user-select: none;
+
+}
+
+.milkCounter {
+    background-image: url('../imgs/cow\ Background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: solid 7px black;
+    border-radius: 10px;
+    user-select: none;
+
+}
+
+.buttonDiv {
+    margin-left: 10px;
+}
+
+.counters {
+    display: flex;
+    user-select: none;
+}
+
+.priceButton {
+    width: 38px;
+    height: 38px;
+}
+
+#price {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#milkAmount {
+    color: aliceblue;
+    margin: auto;
+    padding: 10px;
+
+    text-align: center;
+    font-weight: 700;
+    font-size: x-large;
+    user-select: none;
+}
+
+
+#homeText {
+    margin: auto;
+    margin-top: 100px;
+    inline-size: 400px;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 16px;
+    overflow-wrap: break-word;
+    cursor: pointer;
+}

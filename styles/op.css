@@ -1,0 +1,56 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.translator {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.lang1, .lang2 {
+    width: 25%;
+    aspect-ratio: 1;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.swap {
+    width: 25px;
+}
+
+#input, #output {
+    width: 80%;
+    margin-left: 10%;
+    height: 80%;
+    resize: none;
+    padding: 5px;
+}
+
+.buttonHolder {
+    display: flex;
+    justify-content: center;
+}
+
+#translate {
+    padding: 20px;
+    border: 1px solid black;
+    cursor: pointer;
+    user-select: none;
+}
+
+#swap {
+    width: 50px;
+    aspect-ratio: 1;
+    border: 1px solid black;
+}
+
+#speak {
+    border: 1px solid black;    
+    cursor: pointer;
+    user-select: none;
+}
