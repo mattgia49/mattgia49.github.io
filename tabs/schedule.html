@@ -8,18 +8,7 @@
     <link rel="stylesheet" href="../styles/schedule.css">
 </head>
 <body>
-    <script>
-        $('.letter').hover(function(e){
-            curr = "#" + e.currentTarget.attributes['id']['nodeValue'];
-            color = "rgb(" + Math.random() * 255 + "," + Math.random() * 255 + "," + Math.random() * 255 + ")"
-            $(curr).css("color",color)
-            $(curr).css("transform", "scale(125%)")
-        }, function(e){
-            curr = "#" + e.currentTarget.attributes['id']['nodeValue'];
-            $(curr).css("color","white")
-            $(curr).css("transform", "scale(100%)")
-        })
-    </script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
