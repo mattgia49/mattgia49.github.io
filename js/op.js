@@ -2,15 +2,15 @@ var input = 1
 var prevInput = ""
 
 document.getElementById("speak").addEventListener("click", function(){
-    // const message = new SpeechSynthesisUtterance();
-    // message.text = document.getElementById("output").value;
+    const message = new SpeechSynthesisUtterance();
+    message.text = document.getElementById("output").value;
 
-    // const speechSynthesis = window.speechSynthesis;
+    const speechSynthesis = window.speechSynthesis;
     
-    // speechSynthesis.speak(message);
+    speechSynthesis.speak(message);
     
-    var audio = new Audio("../The Missile Knows Where It Is....mp3")
-    audio.play()
+    // var audio = new Audio("../The Missile Knows Where It Is....mp3")
+    // audio.play()
 })
 
 document.getElementById("translate").addEventListener("click", function(){
