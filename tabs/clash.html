@@ -1156,9 +1156,13 @@
             "/sounds/card_rare_megaminion/royal_minion_wing_03.wav",
             "/sounds/card_rare_megaminion/royal_min_dep_01.wav",
             "/sounds/card_rare_megaminion/royal_min_atk_01.wav"]
-        const randomIndex = Math.floor(Math.random() * sounds.length);
+        let randomItem = ''
+        while(!randomItem.includes("dep"))
+        {
+            const randomIndex = Math.floor(Math.random() * sounds.length);
 
-        const randomItem = sounds[randomIndex]
+            randomItem = sounds[randomIndex]
+        }
     </script>
 </head>
 <body>
