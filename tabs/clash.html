@@ -1156,25 +1156,40 @@
             "/sounds/card_rare_megaminion/royal_minion_wing_03.wav",
             "/sounds/card_rare_megaminion/royal_min_dep_01.wav",
             "/sounds/card_rare_megaminion/royal_min_atk_01.wav"]
-        let randomItem = ''
+        function getRandomSound() {
         while(!randomItem.includes("dep"))
-        {
-            const randomIndex = Math.floor(Math.random() * sounds.length);
+            {
+                const randomIndex = Math.floor(Math.random() * sounds.length);
 
-            randomItem = sounds[randomIndex]
+                return sounds[randomIndex]
+            }
         }
+        let randomItem = getRandomSound();
+
     </script>
 </head>
 <body>
-    <div id="play" style="width: 100px; height: 100px; background-color: red">
 
-    </div>
+    <button id="play">Play Sound</button>
+    <button id="reveal">Reveal Sound</button>
+    <button id="new">New Sound</button>
+    <div style="display:none;" id="currentSound"></div>
     <script>
         document.getElementById("play").addEventListener("click", function(){
-            console.log(randomItem)
             const sound = new Audio(randomItem);
             sound.currentTime = 0;
             sound.play()
+        })
+        document.getElementById("reveal").addEventListener("click", function(){
+            document.getElementById("currentSound").innerText = randomItem;
+            document.getElementById("currentSound").style.display = "block";
+        })
+        document.getElementById("new").addEventListener("click", function(){
+            while(!randomItem.includes("dep"))
+            {
+                const randomIndex = Math.floor(Math.random() * sounds.length);
+                randomItem = getRandomSound();
+            }
         })
     </script>
 </body>
