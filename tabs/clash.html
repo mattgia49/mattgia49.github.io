@@ -1190,6 +1190,7 @@
         document.getElementById("new").addEventListener("click", function(){
             while(!randomItem.includes("dep"))
             {
+            document.getElementById("currentSound").style.display = "none";
                 const randomIndex = Math.floor(Math.random() * sounds.length);
                 randomItem = getRandomSound();
             }
