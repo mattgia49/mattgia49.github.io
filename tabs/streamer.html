@@ -50,9 +50,16 @@
 
             a.href = url;
             a.download = "streamers.json";
+            a.style.display = "none";
+
+            document.body.appendChild(a);
             a.click();
 
-            URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+
+            setTimeout(() => {
+                URL.revokeObjectURL(url);
+            }, 1000);
         }
         document.getElementById("start").addEventListener("pointerup", () => {
             document.getElementById("menu").style.display = "none";
