@@ -15,11 +15,9 @@
 <body>
     <nav id="navbar"></nav>
 
-    <div id="start">
-        Start
-    </div>
-    <div id="save">
-        save
+    <div id="menu">
+        <button id="start">Start</button>
+        <button id="save">Save</button>
     </div>
 
     <div id="colors">
@@ -56,11 +54,10 @@
 
             URL.revokeObjectURL(url);
         }
-        document.getElementById("start").addEventListener("pointerdown", () =>{
-            document.getElementById("start").style.display = "none"
-            document.getElementById("save").style.display = "none"
-            document.getElementById("colors").style.display = "grid"
-        })
+        document.getElementById("start").addEventListener("pointerup", () => {
+            document.getElementById("menu").style.display = "none";
+            document.getElementById("colors").style.display = "grid";
+        });
         document.getElementById("save").addEventListener("pointerdown", () =>{
             console.log("test")
             saveStreamers()
@@ -98,11 +95,11 @@
         });
 
         document.getElementById("done").addEventListener("pointerdown", () =>{
-            document.getElementById("start").style.display = "flex"
-            document.getElementById("save").style.display = "flex"
+            document.getElementById("menu").style.display = "flex";
             document.getElementById("colors").style.display = "none"
             streamers.push(curStreamer)
             curStreamer = []
+            lastThree = []
         })
 
         $(function() {

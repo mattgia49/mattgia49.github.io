@@ -5,12 +5,13 @@
 }
 
 #colors {
-    margin: auto;
-    display: grid;
+    display: none;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: repeat(4, minmax(0, 1fr));
     width: 75%;
+    max-width: 450px;
     gap: 10px;
+    margin: 0 auto;
 }
 
 .colorButt {
@@ -28,20 +29,41 @@
     grid-column: 2;
 }
 
-#start {
-    border: black 1px solid;
-    width: 50%;
+#menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 30px 15px;
+}
+
+#start, #save {
+    width: 40%;
+    max-width: 200px;
     aspect-ratio: 1;
-    touch-action: manipulation;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
     cursor: pointer;
+    touch-action: manipulation;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+#start {
+    background-color: #28a745;
 }
 
 #save {
-    border: black 1px solid;
-    width: 50%;
-    aspect-ratio: 1;
-    touch-action: manipulation;
-    cursor: pointer;
+    background-color: #007bff;
+}
+
+#start:active, #save:active {
+    transform: scale(0.96);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #done {
