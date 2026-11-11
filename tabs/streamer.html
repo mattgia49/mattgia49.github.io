@@ -56,12 +56,12 @@
 
             URL.revokeObjectURL(url);
         }
-        document.getElementById("start").addEventListener("pointerup", () =>{
+        document.getElementById("start").addEventListener("pointerdown", () =>{
             document.getElementById("start").style.display = "none"
             document.getElementById("save").style.display = "none"
             document.getElementById("colors").style.display = "grid"
         })
-        document.getElementById("save").addEventListener("pointerup", () =>{
+        document.getElementById("save").addEventListener("pointerdown", () =>{
             console.log("test")
             saveStreamers()
         })
@@ -83,7 +83,7 @@
         document.getElementById("colors").appendChild(doneButt);
 
         document.querySelectorAll(".colorButt").forEach(element => {
-            element.addEventListener("pointerup", (e) => {
+            element.addEventListener("pointerdown", (e) => {
                 let color = e.currentTarget.id;
 
                 curStreamer.push(color);
@@ -97,7 +97,7 @@
             });
         });
 
-        document.getElementById("done").addEventListener("pointerup", () =>{
+        document.getElementById("done").addEventListener("pointerdown", () =>{
             document.getElementById("start").style.display = "flex"
             document.getElementById("save").style.display = "flex"
             document.getElementById("colors").style.display = "none"
