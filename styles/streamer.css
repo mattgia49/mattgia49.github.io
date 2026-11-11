@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -29,6 +30,7 @@
     grid-column: 2;
 }
 
+/* Main menu */
 #menu {
     display: flex;
     justify-content: center;
@@ -38,18 +40,36 @@
     padding: 30px 15px;
 }
 
-#start, #save {
+#menu button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     width: 40%;
     max-width: 200px;
     aspect-ratio: 1;
+
+    margin: 0;
+    padding: 10px;
+
     border: none;
     border-radius: 15px;
+
+    font-family: Arial, sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
+    line-height: 1;
+
     color: white;
+    text-align: center;
+
     cursor: pointer;
     touch-action: manipulation;
+
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: none;
+    appearance: none;
+
     transition: transform 0.1s, box-shadow 0.1s;
 }
 
@@ -61,11 +81,12 @@
     background-color: #007bff;
 }
 
-#start:active, #save:active {
+#menu button:active {
     transform: scale(0.96);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Done button */
 #done {
     grid-column: 3;
     grid-row: 4;
@@ -77,6 +98,7 @@
     cursor: pointer;
 }
 
+/* Last three colors */
 #lastThree {
     grid-column: 1;
     grid-row: 4;
