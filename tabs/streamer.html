@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamers</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/streamer.css">
+    <script>
+        let colors = ["white", "pink", "red", "orange", "yellow", "green", "lime", "blue", "cyan", "purple"]
+        let streamers = []
+        let curStreamer = []
+    </script>
+</head>
+<body>
+    <nav id="navbar"></nav>
+
+    <div id="start">
+        Start
+    </div>
+    <div id="save">
+        save
+    </div>
+
+    <div id="colors">
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+
+        function saveStreamers() {
+            const data = JSON.stringify(streamers, null, 4);
+            const blob = new Blob([data], { type: "application/json" });
+
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+
+            a.href = url;
+            a.download = "streamers.json";
+            a.click();
+
+            URL.revokeObjectURL(url);
+        }
+        document.getElementById("start").addEventListener("click", () =>{
+            document.getElementById("start").style.display = "none"
+            document.getElementById("save").style.display = "none"
+            document.getElementById("colors").style.display = "grid"
+        })
+        document.getElementById("save").addEventListener("click", () =>{
+            console.log("test")
+            saveStreamers()
+        })
+        colors.forEach(element => {
+            let colorButt = document.createElement("div")
+            colorButt.classList.add("colorButt")
+            colorButt.id = element
+            colorButt.style.backgroundColor = element
+            document.getElementById("colors").appendChild(colorButt)
+        });
+
+        let doneButt = document.createElement("div");
+        doneButt.textContent = "Done";
+        doneButt.id = "done";
+        document.getElementById("colors").appendChild(doneButt);
+
+        document.querySelectorAll(".colorButt").forEach(element => {
+            element.addEventListener('click', (e) => {
+                curStreamer.push(e.srcElement.id)
+            })
+        })
+
+        document.getElementById("done").addEventListener("click", () =>{
+            document.getElementById("start").style.display = "flex"
+            document.getElementById("save").style.display = "flex"
+            document.getElementById("colors").style.display = "none"
+            streamers.push(curStreamer)
+            curStreamer = []
+        })
+
+        $(function() {
+           $("#navbar").load("../assets/navbarTab.html");
+        });
+    </script>
+</body>
+</html>
