@@ -9,6 +9,7 @@
         let colors = ["white", "pink", "red", "orange", "yellow", "green", "lime", "blue", "cyan", "purple"]
         let streamers = []
         let curStreamer = []
+        let lastThree = []
     </script>
 </head>
 <body>
@@ -28,6 +29,19 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
+        function updateLastThree() {
+            let box = document.getElementById("lastThree");
+
+            box.innerHTML = "";
+
+            lastThree.forEach(color => {
+                let colorDiv = document.createElement("div");
+                colorDiv.style.backgroundColor = color;
+                colorDiv.classList.add("lastThreeColor");
+
+                box.appendChild(colorDiv);
+            });
+        }
 
         function saveStreamers() {
             const data = JSON.stringify(streamers, null, 4);
@@ -42,12 +56,12 @@
 
             URL.revokeObjectURL(url);
         }
-        document.getElementById("start").addEventListener("click", () =>{
+        document.getElementById("start").addEventListener("pointerup", () =>{
             document.getElementById("start").style.display = "none"
             document.getElementById("save").style.display = "none"
             document.getElementById("colors").style.display = "grid"
         })
-        document.getElementById("save").addEventListener("click", () =>{
+        document.getElementById("save").addEventListener("pointerup", () =>{
             console.log("test")
             saveStreamers()
         })
@@ -59,18 +73,31 @@
             document.getElementById("colors").appendChild(colorButt)
         });
 
+        let lastThreeButt = document.createElement("div");
+        lastThreeButt.id = "lastThree";
+        document.getElementById("colors").appendChild(lastThreeButt);
+
         let doneButt = document.createElement("div");
         doneButt.textContent = "Done";
         doneButt.id = "done";
         document.getElementById("colors").appendChild(doneButt);
 
         document.querySelectorAll(".colorButt").forEach(element => {
-            element.addEventListener('click', (e) => {
-                curStreamer.push(e.srcElement.id)
-            })
-        })
+            element.addEventListener("pointerup", (e) => {
+                let color = e.currentTarget.id;
 
-        document.getElementById("done").addEventListener("click", () =>{
+                curStreamer.push(color);
+                lastThree.push(color);
+
+                if (lastThree.length > 3) {
+                    lastThree.shift();
+                }
+
+                updateLastThree();
+            });
+        });
+
+        document.getElementById("done").addEventListener("pointerup", () =>{
             document.getElementById("start").style.display = "flex"
             document.getElementById("save").style.display = "flex"
             document.getElementById("colors").style.display = "none"
